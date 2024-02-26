@@ -1,0 +1,50 @@
+<h1>Bienvenides</h1>
+<p>¡Esto es Memerch!</p>
+
+<form action="/multi-field-search" method="post">
+  <label for="productName">Product name:</label>
+  <input type="text" name="productName">
+  <label for="productColor">Product color:</label>
+  <input type="text" name="productColor">
+  <button type="submit">Search</button>
+</form>
+
+<form action="/universal-search" method="post">
+  <label for="value">Search:</label>
+  <input type="text" name="value">
+  <button type="submit">Search</button>
+</form>
+
+<br>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Color</th>
+        {{! <th>Price</th> }}
+        
+    </tr>
+
+    
+    {{#products}}
+        <tr>
+            <td>{{productName}}</td>
+            <td>{{productColor}}</td>
+            {{! <td>{{price</td> }}
+        </tr>
+    {{/products}}
+</table>
+
+<br>
+
+<ul>
+  <form action="/new-product" method="post">
+    <input type="text" name="productName">
+    <input type="text" name="productColor">
+    <button type="submit">Añadir</button>
+  </form>
+  
+  {{#products}}
+    <li>{{productName}}, {{productColor}}</li>
+  {{/products}}
+</ul>
